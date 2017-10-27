@@ -5,7 +5,6 @@
   <%= submit_tag %>
 <% end %>
 <ul>
-<% @customers.each do |customer| %>
 <% @songs.each do |song| %>
   <li><%= display_artist(song) %> - <%= link_to song.title, song_path(song) %></li>
 <% end %>
