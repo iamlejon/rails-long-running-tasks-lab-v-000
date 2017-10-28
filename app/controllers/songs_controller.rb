@@ -5,10 +5,10 @@ require 'csv'
   end
 
   def upload
-    CSV.foreach(params[:file].path, headers: true) do |lead|
-      Customer.create(email: lead[0], first_name: lead[1], last_name: lead[2])
+    CSV.foreach(params[:file].path, headers: true) do |song|
+      Song.create(title: lead[0], artist_name: song[1])
     end
-    redirect_to customers_path
+    redirect_to songs_path
   end
 
 
@@ -18,4 +18,3 @@ require 'csv'
     params.require(:song).permit(:title, :artist_name)
   end
 end
-
